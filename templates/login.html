@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% set active_page = '' %}
+{% block title %}Login | Gingies Home Solutions{% endblock %}
+{% block description %}Sign in to the Gingies Home Solutions portal to manage quotes, jobs, and customer requests.{% endblock %}
+{% block body_class %}login-body{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block content %}
+<main class="login-page container-fluid p-0">
+    <section class="login-shell row g-0 min-vh-100" aria-labelledby="login-hero-title">
+      <aside class="login-showcase col-lg-7 d-flex flex-column order-2 order-lg-1" aria-label="Portal overview">
+        <a class="login-brand d-flex align-items-center gap-3" href="{{ url_for('index') }}" aria-label="Return to Gingies Home Solutions home">
+          <img src="{{ url_for('static', filename='images/gingies-logo.png') }}" alt="" class="login-logo" aria-hidden="true">
+          <span class="login-brand-copy">
+            <span class="login-brand-name">Gingies Home Solutions</span>
+            <span class="login-brand-tagline">Contractor Portal</span>
+          </span>
+        </a>
+
+        <div class="login-intro">
+          <p class="login-eyebrow">Field-ready operations</p>
+          <h1 id="login-hero-title">Keep every job, quote, and customer update in one place.</h1>
+          <p class="login-lead">
+            Sign in to review new requests, schedule crews, and track progress across active home service projects.
+          </p>
+        </div>
+
+        <div class="login-showcase-content">
+          <div class="login-stats row g-3" aria-label="Highlights">
+            <article class="login-stat col-sm-6">
+              <strong>24 hrs</strong>
+              <span>Typical quote turnaround</span>
+            </article>
+            <article class="login-stat col-sm-6">
+              <strong>96%</strong>
+              <span>Jobs updated the same day</span>
+            </article>
+          </div>
+
+          <div class="login-highlights">
+            <article class="login-highlight">
+              <p class="login-highlight-title">Requests in one inbox</p>
+              <p>Review incoming work orders, customer notes, and property details without chasing emails.</p>
+            </article>
+            <article class="login-highlight">
+              <p class="login-highlight-title">Schedule with clarity</p>
+              <p>Coordinate site visits, assign teams, and keep homeowners informed with a single workflow.</p>
+            </article>
+          </div>
+        </div>
+      </aside>
+
+      <section class="login-panel col-lg-5 d-flex align-items-center order-1 order-lg-2" aria-labelledby="sign-in-heading">
+        <div class="login-card card border-0 shadow-lg w-100">
+          <img src="{{ url_for('static', filename='images/gingies-logo.png') }}" alt="Gingies Home Solutions" class="login-card-logo d-lg-none mx-auto mb-3">
+          <a class="login-back-link" href="{{ url_for('index') }}">Back to website</a>
+          <p class="login-kicker">Welcome back</p>
+          <h2 id="sign-in-heading">Sign in to your account</h2>
+          <p class="login-copy">Use your email address and password to access the Gingies dashboard and customer job queue.</p>
+
+          <form id="loginForm" class="login-form d-grid gap-3" novalidate>
+            <label class="form-label mb-0" for="identifier">Email address</label>
+            <input
+              class="form-control form-control-lg"
+              id="identifier"
+              name="identifier"
+              type="email"
+              placeholder="name@gingieshomesolutions.com"
+              autocomplete="email"
+              required
+            >
+
+            <label class="form-label mb-0" for="password">Password</label>
+            <input
+              class="form-control form-control-lg"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <div class="login-row d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <label class="checkbox-field form-check mb-0" for="rememberMe">
+                <input class="form-check-input" id="rememberMe" name="rememberMe" type="checkbox">
+                <span>Keep me signed in</span>
+              </label>
+              <a href="{{ url_for('forgot_password') }}">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="submit-button login-submit btn btn-primary btn-lg">Sign in</button>
+            <p id="loginMessage" class="form-message alert d-none mb-0" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="login-divider" aria-hidden="true">
+            <span>or</span>
+          </div>
+
+          <a class="login-secondary btn btn-outline-success w-100" href="{{ url_for('signup') }}">Create an account</a>
+          <p class="login-support">
+            Need help? <a href="mailto:hello@gingieshomesolutions.com">hello@gingieshomesolutions.com</a>
+          </p>
+        </div>
+      </section>
+    </section>
+  </main>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="{{ url_for('static', filename='js/supabase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

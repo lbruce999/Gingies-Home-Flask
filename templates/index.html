@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% set active_page = 'home' %}
+{% block title %}Gingies Home Solutions | Home Repairs and Improvements{% endblock %}
+{% block description %}Gingies Home Solutions helps homeowners request repairs, maintenance, and improvement services through a clear guided intake.{% endblock %}
+{% block body_class %}home-page{% endblock %}
+{% block content %}
+<main>
+  <section class="home-hero home-hero-modern" aria-labelledby="hero-heading">
+    <div class="container-xl hero-modern-layout row g-5 align-items-center mx-auto">
+      <div class="home-hero-content col-lg-7">
+        <p class="home-kicker">Gingies Home Solutions</p>
+        <div class="hero-badge-row d-flex flex-wrap gap-2" aria-label="Key service highlights">
+          <span class="hero-badge badge rounded-pill">Fast Requests</span>
+          <span class="hero-badge badge rounded-pill">Trusted Home Help</span>
+        </div>
+        <h1 id="hero-heading">Book home repairs and services through a cleaner, smarter request flow.</h1>
+        <p class="home-hero-text">
+          Start with your address or ZIP code, choose the type of help you need, and send a clear request in just a few steps.
+        </p>
+        <div class="home-hero-actions d-flex flex-wrap align-items-center gap-3">
+          <a href="#quote" class="cta-button btn btn-primary btn-lg">Start a Service Request</a>
+          <a href="#services" class="home-secondary-link btn btn-link">Browse services</a>
+        </div>
+        <div class="hero-stat-grid row g-3" aria-label="Platform highlights">
+          <article class="hero-stat-card col-sm-4">
+            <span class="hero-stat-number">10+</span>
+            <p>Common home service categories</p>
+          </article>
+          <article class="hero-stat-card col-sm-4">
+            <span class="hero-stat-number">4</span>
+            <p>Quick steps from request to submit</p>
+          </article>
+          <article class="hero-stat-card col-sm-4">
+            <span class="hero-stat-number">1</span>
+            <p>Simple form built for homeowners</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="hero-visual-card col-lg-5" aria-hidden="true">
+        <div class="hero-orb hero-orb-one"></div>
+        <div class="hero-orb hero-orb-two"></div>
+        <div class="hero-dashboard-preview">
+          <div class="hero-preview-topbar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="hero-preview-panel hero-preview-panel-primary">
+            <p class="hero-preview-label">New Request</p>
+            <strong>Kitchen sink leak</strong>
+            <small>Youngstown, OH · Plumbing · This week</small>
+          </div>
+          <div class="hero-preview-grid">
+            <div class="hero-preview-panel">
+              <p class="hero-preview-label">Service</p>
+              <strong>Plumbing</strong>
+            </div>
+            <div class="hero-preview-panel">
+              <p class="hero-preview-label">Property</p>
+              <strong>Single family</strong>
+            </div>
+            <div class="hero-preview-panel">
+              <p class="hero-preview-label">Preferred Contact</p>
+              <strong>Text message</strong>
+            </div>
+            <div class="hero-preview-panel hero-preview-accent">
+              <p class="hero-preview-label">Status</p>
+              <strong>Ready to review</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-trust-strip home-trust-strip-modern" aria-label="Service request benefits">
+    <div class="container-xl home-trust-grid row g-3 mx-auto">
+      <article class="trust-card col-md-4 card border-0">
+        <span class="home-trust-label">Simple Process</span>
+        <strong>Submit your request in a few clear steps.</strong>
+      </article>
+      <article class="trust-card col-md-4 card border-0">
+        <span class="home-trust-label">Better Details</span>
+        <strong>Location, service, urgency, and contact info are captured upfront.</strong>
+      </article>
+      <article class="trust-card col-md-4 card border-0">
+        <span class="home-trust-label">Modern Experience</span>
+        <strong>A polished mobile-first form that feels easier to use.</strong>
+      </article>
+    </div>
+  </section>
+
+  <section id="quote" class="home-intake-section" aria-labelledby="quote-heading">
+    <div class="container-xl intake-layout row g-5 align-items-start mx-auto">
+      <div class="intake-intro col-lg-4">
+        <p class="home-kicker">Request Service</p>
+        <h2 id="quote-heading">Tell us about your project.</h2>
+        <p>
+          Share the location, choose the service, describe the job, and leave your contact details for follow-up.
+        </p>
+      </div>
+
+      <form id="quoteForm" class="intake-form col-lg-8 card border-0 shadow-lg p-4 p-md-5" novalidate>
+        <div class="intake-progress" aria-label="Request progress">
+          <ol>
+            <li class="active" data-progress-step="0">Location</li>
+            <li data-progress-step="1">Service</li>
+            <li data-progress-step="2">Project</li>
+            <li data-progress-step="3">Contact</li>
+          </ol>
+          <div class="intake-progress-bar" aria-hidden="true">
+            <span id="intakeProgressFill"></span>
+          </div>
+        </div>
+
+        <fieldset class="intake-step active" data-step="0">
+          <legend>Where is the project?</legend>
+          <p class="step-help">Enter a street address, ZIP code, or both. City and state help route the request cleanly.</p>
+
+          <label class="form-label" for="address">Full address</label>
+          <input class="form-control" id="address" name="address" type="text" autocomplete="street-address" placeholder="123 Main St">
+
+          <label class="form-label" for="zipCode">ZIP code</label>
+          <input class="form-control" id="zipCode" name="zipCode" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="43215">
+
+          <div class="field-grid two-column row g-3">
+            <div class="col-md-8">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control" id="city" name="city" type="text" autocomplete="address-level2" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="state">State</label>
+              <input class="form-control" id="state" name="state" type="text" autocomplete="address-level1" maxlength="2" placeholder="OH" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="intake-step" data-step="1" hidden>
+          <legend>What type of help do you need?</legend>
+          <p class="step-help">Choose the closest category. Add a short subtype if it helps explain the job.</p>
+
+          <input id="serviceType" name="serviceType" type="hidden">
+
+          <div class="service-option-grid" id="serviceOptions" aria-label="Service categories">
+            <button type="button" class="service-option btn text-start" data-service="Plumbing" aria-pressed="false">
+              <span class="service-option-icon" data-icon="PL" aria-hidden="true"></span>
+              <span><strong>Plumbing</strong><small>Leaks, fixtures, drains</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Electrical" aria-pressed="false">
+              <span class="service-option-icon" data-icon="EL" aria-hidden="true"></span>
+              <span><strong>Electrical</strong><small>Outlets, lighting, troubleshooting</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="HVAC" aria-pressed="false">
+              <span class="service-option-icon" data-icon="HV" aria-hidden="true"></span>
+              <span><strong>HVAC</strong><small>Heating, cooling, airflow</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Roofing" aria-pressed="false">
+              <span class="service-option-icon" data-icon="RF" aria-hidden="true"></span>
+              <span><strong>Roofing</strong><small>Leaks, shingles, inspection</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Handyman" aria-pressed="false">
+              <span class="service-option-icon" data-icon="HM" aria-hidden="true"></span>
+              <span><strong>Handyman</strong><small>Small fixes, installs, repairs</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Landscaping" aria-pressed="false">
+              <span class="service-option-icon" data-icon="LS" aria-hidden="true"></span>
+              <span><strong>Landscaping</strong><small>Yard work, cleanup, planting</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Cleaning" aria-pressed="false">
+              <span class="service-option-icon" data-icon="CL" aria-hidden="true"></span>
+              <span><strong>Cleaning</strong><small>Home cleaning and turnover help</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Painting" aria-pressed="false">
+              <span class="service-option-icon" data-icon="PT" aria-hidden="true"></span>
+              <span><strong>Painting</strong><small>Interior, exterior, touch-ups</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="Moving" aria-pressed="false">
+              <span class="service-option-icon" data-icon="MV" aria-hidden="true"></span>
+              <span><strong>Moving</strong><small>Local moves and heavy items</small></span>
+            </button>
+            <button type="button" class="service-option btn text-start" data-service="General Home Repair" aria-pressed="false">
+              <span class="service-option-icon" data-icon="GH" aria-hidden="true"></span>
+              <span><strong>General Home Repair</strong><small>Doors, drywall, everyday fixes</small></span>
+            </button>
+          </div>
+
+          <label class="form-label" for="serviceSubtype">Optional subtype or detail</label>
+          <input class="form-control" id="serviceSubtype" name="serviceSubtype" type="text" placeholder="Leak repair, outlet install, deep clean">
+        </fieldset>
+
+        <fieldset class="intake-step" data-step="2" hidden>
+          <legend>Tell us what is going on.</legend>
+          <p class="step-help">A short, specific description helps the request get reviewed faster.</p>
+
+          <label class="form-label" for="projectDescription">Project description</label>
+          <textarea class="form-control" id="projectDescription" name="projectDescription" rows="5" required></textarea>
+
+          <div class="choice-group" data-choice-group="urgency">
+            <p class="choice-label">Urgency</p>
+            <div class="choice-grid">
+              <label class="choice-card"><input class="form-check-input" type="radio" name="urgency" value="emergency"> Emergency</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="urgency" value="within_24_hours"> Within 24 hours</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="urgency" value="this_week"> This week</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="urgency" value="flexible"> Flexible</label>
+            </div>
+          </div>
+
+          <div class="choice-group" data-choice-group="propertyType">
+            <p class="choice-label">Property type</p>
+            <div class="choice-grid">
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="single_family"> Single family</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="townhouse"> Townhouse</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="condo"> Condo</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="apartment"> Apartment</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="multifamily"> Multifamily</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="commercial"> Commercial</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="propertyType" value="other"> Other</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="intake-step" data-step="3" hidden>
+          <legend>How should we reach you?</legend>
+          <p class="step-help">We will use this only to follow up on this service request.</p>
+
+          <div class="field-grid two-column row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="firstName">First name</label>
+              <input class="form-control" id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="lastName">Last name</label>
+              <input class="form-control" id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+
+          <label class="form-label" for="phone">Phone</label>
+          <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" required>
+
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" id="email" name="email" type="email" autocomplete="email" required>
+
+          <div class="choice-group" data-choice-group="preferredContactMethod">
+            <p class="choice-label">Preferred contact method</p>
+            <div class="choice-grid contact-choice-grid">
+              <label class="choice-card"><input class="form-check-input" type="radio" name="preferredContactMethod" value="phone"> Phone</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="preferredContactMethod" value="text"> Text</label>
+              <label class="choice-card"><input class="form-check-input" type="radio" name="preferredContactMethod" value="email"> Email</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="intake-actions d-flex flex-wrap gap-2 justify-content-end">
+          <button type="button" class="intake-back btn btn-outline-secondary" id="intakeBack" hidden>Back</button>
+          <button type="button" class="intake-next btn btn-primary" id="intakeNext">Next: Choose Service</button>
+          <button type="submit" class="intake-submit btn btn-primary" id="intakeSubmit" hidden>Submit Service Request</button>
+        </div>
+
+        <p id="formMessage" class="form-message alert mt-3 mb-0 d-none" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="services" class="home-services home-services-modern" aria-labelledby="services-heading">
+    <div class="container-xl">
+      <div class="section-heading services-heading-modern">
+        <div>
+          <p class="home-kicker">Home Services</p>
+          <h2 id="services-heading">Common home services, one polished request experience.</h2>
+          <p class="section-lead">Built for real homeowner needs, from urgent fixes to everyday maintenance and improvement projects.</p>
+        </div>
+        <a href="#quote" class="home-secondary-link services-heading-link btn btn-outline-primary">Request Service</a>
+      </div>
+
+      <div class="home-service-list home-service-list-modern row g-4">
+        <article class="service-card-modern col-md-6 col-lg-4 card h-100 border-0 shadow-sm">
+          <span class="service-mini-icon" data-icon="PL" aria-hidden="true"></span>
+          <span class="service-card-tag">Most Requested</span>
+          <h3>Plumbing</h3>
+          <p>Leaks, fixtures, drains, clogs, and practical water-line help for common household issues.</p>
+        </article>
+        <article class="service-card-modern col-md-6 col-lg-4 card h-100 border-0 shadow-sm">
+          <span class="service-mini-icon" data-icon="EL" aria-hidden="true"></span>
+          <span class="service-card-tag">Home Essentials</span>
+          <h3>Electrical</h3>
+          <p>Lighting, outlets, switches, ceiling fans, and troubleshooting when something stops working right.</p>
+        </article>
+        <article class="service-card-modern col-md-6 col-lg-4 card h-100 border-0 shadow-sm">
+          <span class="service-mini-icon" data-icon="HV" aria-hidden="true"></span>
+          <span class="service-card-tag">Comfort & Climate</span>
+          <h3>HVAC</h3>
+          <p>Heating, cooling, airflow, and indoor comfort issues that need attention before they get worse.</p>
+        </article>
+        <article class="service-card-modern col-md-6 col-lg-4 card h-100 border-0 shadow-sm">
+          <span class="service-mini-icon" data-icon="HM" aria-hidden="true"></span>
+          <span class="service-card-tag">Everyday Repairs</span>
+          <h3>Handyman</h3>
+          <p>Small installs, punch-list items, mounting, patching, and general household fixes in one place.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="home-process home-process-modern" aria-labelledby="process-heading">
+    <div class="container-xl process-layout process-layout-modern row g-5 align-items-start mx-auto">
+      <div class="section-heading">
+        <p class="home-kicker">How It Works</p>
+        <h2 id="process-heading">A simple, modern way to request help for your home.</h2>
+        <p class="section-lead">The form is designed to collect the right details early so the request feels cleaner, faster, and easier to review.</p>
+      </div>
+      <ol class="process-steps process-steps-modern">
+        <li>
+          <span>1</span>
+          <div>
+            <strong>Start with location</strong>
+            <p>Enter the address or ZIP code so the request begins with the right service area and job location.</p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <strong>Choose the service</strong>
+            <p>Select the closest category and add extra detail when the project needs a little more context.</p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <strong>Describe the project</strong>
+            <p>Share what is happening, how urgent it is, and the type of property so the request starts stronger.</p>
+          </div>
+        </li>
+        <li>
+          <span>4</span>
+          <div>
+            <strong>Send and wait for follow-up</strong>
+            <p>Submit your request and Gingies can review the details and reach back out using your preferred contact method.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="home-proof home-proof-modern" aria-labelledby="trust-heading">
+    <div class="container-xl proof-layout proof-layout-modern row g-5 align-items-center mx-auto">
+      <div>
+        <p class="home-kicker">Ready to Get Started?</p>
+        <h2 id="trust-heading">Submit your service request today.</h2>
+        <p class="section-lead">A cleaner first step for repairs, maintenance, and home projects that need a real follow-up.</p>
+      </div>
+      <div class="proof-points proof-points-modern">
+        <p><strong>Repairs, maintenance, and home projects.</strong> Tell us what you need and send it in one clean request.</p>
+        <p><strong>Better first contact.</strong> The form captures the details homeowners and contractors both care about.</p>
+        <p><strong>Built for clarity.</strong> Service type, urgency, property type, and contact preference are gathered before follow-up begins.</p>
+        <p><a href="#quote" class="cta-button btn btn-primary btn-lg">Start a Service Request</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

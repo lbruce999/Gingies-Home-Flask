@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% set active_page = 'services' %}
+{% block title %}Services | Gingies Home Solutions{% endblock %}
+{% block description %}Explore Gingies Home Solutions services for plumbing, electrical, carpentry, and general home repairs.{% endblock %}
+{% block body_class %}dashboard-body services-body{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-layout.css') }}">
+{% endblock %}
+{% block content %}
+<main class="services-platform">
+  <section class="services-hero" aria-labelledby="services-hero-heading">
+    <div class="services-hero-inner container-xl">
+      <div class="services-hero-copy col-lg-8">
+        <p class="services-eyebrow">Home service coverage</p>
+        <h1 id="services-hero-heading">Reliable repair crews for the jobs homeowners need handled right.</h1>
+        <p class="services-hero-text">
+          Book plumbing, electrical, carpentry, and general repair help with clear scope,
+          steady communication, and local contractor support.
+        </p>
+        <div class="services-hero-actions d-flex flex-wrap gap-3" aria-label="Services actions">
+          <a class="services-primary-link btn btn-primary btn-lg" href="{{ url_for('index') }}#quote">Request a Quote</a>
+          <a class="services-secondary-link btn btn-outline-light btn-lg" href="{{ url_for('dashboard') }}">Contractor Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-trust-strip" aria-label="Service standards">
+    <div class="services-page-shell container-xl">
+      <div class="services-trust-grid row g-3">
+        <div class="services-trust-item col-md-4">
+          <span>Response standard</span>
+          <strong>Fast quote review</strong>
+        </div>
+        <div class="services-trust-item col-md-4">
+          <span>Project fit</span>
+          <strong>Right crew, right job</strong>
+        </div>
+        <div class="services-trust-item col-md-4">
+          <span>Service area</span>
+          <strong>Greater Columbus Area</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-page-section" aria-labelledby="services-list-heading">
+    <div class="services-page-shell container-xl">
+      <div class="services-section-header d-flex flex-wrap justify-content-between align-items-end gap-3">
+        <div>
+          <p class="services-section-kicker">Core services</p>
+          <h2 id="services-list-heading">Choose the work you need done.</h2>
+          <p>Each request is routed with the project details contractors need before they accept the job.</p>
+        </div>
+        <span class="panel-badge badge rounded-pill text-bg-light">Residential work</span>
+      </div>
+
+      <div class="services-panel-grid row g-4">
+        <article class="dashboard-panel services-tile col-md-6 col-xl-3 card h-100 border-0 shadow-sm">
+          <span class="service-badge badge rounded-pill">Plumbing</span>
+          <h3>Leaks, fixtures, and water-line repairs</h3>
+          <p>Help for practical plumbing issues that need a clear diagnosis and dependable fix.</p>
+          <ul class="services-checklist">
+            <li>Faucet and fixture replacement</li>
+            <li>Leak repair and troubleshooting</li>
+            <li>Sink, drain, and supply-line work</li>
+          </ul>
+        </article>
+
+        <article class="dashboard-panel services-tile col-md-6 col-xl-3 card h-100 border-0 shadow-sm">
+          <span class="service-badge badge rounded-pill">Electrical</span>
+          <h3>Lighting, outlets, and common electrical repairs</h3>
+          <p>Support for updates and repairs where safety, clarity, and clean work matter.</p>
+          <ul class="services-checklist">
+            <li>Lighting installation</li>
+            <li>Outlet and switch service</li>
+            <li>Basic troubleshooting</li>
+          </ul>
+        </article>
+
+        <article class="dashboard-panel services-tile col-md-6 col-xl-3 card h-100 border-0 shadow-sm">
+          <span class="service-badge badge rounded-pill">Carpentry</span>
+          <h3>Trim, shelving, and practical finish work</h3>
+          <p>Detailed carpentry for improvements that make rooms feel finished and useful.</p>
+          <ul class="services-checklist">
+            <li>Custom shelving</li>
+            <li>Trim and finish repair</li>
+            <li>Door and hardware adjustments</li>
+          </ul>
+        </article>
+
+        <article class="dashboard-panel services-tile col-md-6 col-xl-3 card h-100 border-0 shadow-sm">
+          <span class="service-badge badge rounded-pill">General repairs</span>
+          <h3>Everyday fixes that keep the home working</h3>
+          <p>Reliable help for punch lists, small repairs, and maintenance projects.</p>
+          <ul class="services-checklist">
+            <li>Drywall patching</li>
+            <li>Door and cabinet repairs</li>
+            <li>Small maintenance tasks</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-page-section" aria-labelledby="services-process-heading">
+    <div class="services-page-shell container-xl">
+      <div class="services-section-header d-flex flex-wrap justify-content-between align-items-end gap-3">
+        <div>
+          <p class="services-section-kicker">How requests move</p>
+          <h2 id="services-process-heading">Clear intake from quote to scheduled work.</h2>
+          <p>Homeowners get a direct path to request help, while contractors get enough context to accept confidently.</p>
+        </div>
+      </div>
+
+      <div class="services-detail-grid row g-4">
+        <article class="dashboard-panel col-lg-7 card border-0 shadow-sm">
+          <ol class="services-process-list">
+            <li>
+              <span class="services-step-number">1</span>
+              <div>
+                <h3>Share the project</h3>
+                <p>Send the service type, city, contact details, and a short description of the work.</p>
+              </div>
+            </li>
+            <li>
+              <span class="services-step-number">2</span>
+              <div>
+                <h3>Get matched to the right workstream</h3>
+                <p>Requests are organized by service, location, and current job status.</p>
+              </div>
+            </li>
+            <li>
+              <span class="services-step-number">3</span>
+              <div>
+                <h3>Move from accepted to complete</h3>
+                <p>Contractors can track accepted jobs, schedule work, and close completed requests.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="dashboard-panel services-coverage-card col-lg-5 card border-0 shadow-sm" aria-labelledby="services-coverage-heading">
+          <div>
+            <p class="services-section-kicker">Local coverage</p>
+            <h3 id="services-coverage-heading">Built for nearby home-service work.</h3>
+            <p>Gingies focuses on practical residential projects across the current service area.</p>
+          </div>
+          <ul class="services-coverage-list">
+            <li>Salem</li>
+
+            <li>Columbiana</li>
+
+            <li>Lisbon</li>
+
+            <li>Canfield</li>
+          </ul>
+        </aside>
+      </div>
+
+      <section class="services-cta-band d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4" aria-labelledby="services-cta-heading">
+        <div>
+          <h2 id="services-cta-heading">Ready to price the work?</h2>
+          <p>Send the details once and keep the request moving through the Gingies workflow.</p>
+        </div>
+        <a class="services-primary-link btn btn-primary btn-lg" href="{{ url_for('index') }}#quote">Start Request</a>
+      </section>
+    </div>
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

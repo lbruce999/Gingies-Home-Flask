@@ -1,0 +1,47 @@
+:root {
+  --gingies-primary: #e85a00;
+  --gingies-primary-rgb: 232, 90, 0;
+  --gingies-primary-dark: #b84300;
+  --gingies-brown: #6a2e00;
+  --gingies-tan: #e6d3a3;
+  --gingies-green: #1f5a34;
+  --gingies-green-rgb: 31, 90, 52;
+  --gingies-cream: #faf6ed;
+  --gingies-deep-green: #173f25;
+  --gingies-ink: #21160d;
+  --gingies-muted: #6f6258;
+  --gingies-surface: #ffffff;
+  --gingies-surface-warm: #fffcf7;
+  --gingies-line: #e7ded0;
+  --gingies-soft-line: #efe8dd;
+  --gingies-danger: #b42318;
+  --gingies-success: #1f5a34;
+  --gingies-font-sans: "Manrope", Arial, sans-serif;
+  --gingies-font-display: "Fraunces", Georgia, serif;
+  --gingies-radius-sm: 0.65rem;
+  --gingies-radius: 1rem;
+  --gingies-radius-lg: 1.5rem;
+  --gingies-shadow-sm: 0 0.5rem 1.25rem rgba(80, 55, 30, 0.08);
+  --gingies-shadow: 0 1rem 2.5rem rgba(80, 55, 30, 0.12);
+  --gingies-shadow-lg: 0 1.75rem 4rem rgba(54, 35, 19, 0.18);
+  --gingies-transition: 180ms ease;
+
+  --bs-primary: var(--gingies-primary);
+  --bs-primary-rgb: var(--gingies-primary-rgb);
+  --bs-secondary: var(--gingies-brown);
+  --bs-success: var(--gingies-success);
+  --bs-success-rgb: var(--gingies-green-rgb);
+  --bs-danger: var(--gingies-danger);
+  --bs-body-color: var(--gingies-ink);
+  --bs-body-bg: var(--gingies-cream);
+  --bs-border-color: var(--gingies-line);
+  --bs-link-color: var(--gingies-green);
+  --bs-link-hover-color: var(--gingies-primary-dark);
+  --bs-font-sans-serif: var(--gingies-font-sans);
+  --bs-border-radius: var(--gingies-radius-sm);
+  --bs-border-radius-lg: var(--gingies-radius);
+  --bs-border-radius-xl: var(--gingies-radius-lg);
+  --bs-box-shadow-sm: var(--gingies-shadow-sm);
+  --bs-box-shadow: var(--gingies-shadow);
+  --bs-box-shadow-lg: var(--gingies-shadow-lg);
+}

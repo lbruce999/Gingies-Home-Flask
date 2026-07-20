@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% set active_page = '' %}
+{% block title %}Sign Up | Gingies Home Solutions{% endblock %}
+{% block description %}Create a Gingies Home Solutions account to access your dashboard and manage service requests.{% endblock %}
+{% block body_class %}login-body{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block content %}
+<main class="login-page container-fluid p-0">
+    <section class="login-shell row g-0 min-vh-100" aria-labelledby="signup-hero-title">
+      <aside class="login-showcase col-lg-7 d-flex flex-column order-2 order-lg-1" aria-label="Account benefits">
+        <a class="login-brand d-flex align-items-center gap-3" href="{{ url_for('index') }}" aria-label="Return to Gingies Home Solutions home">
+          <img src="{{ url_for('static', filename='images/gingies-logo.png') }}" alt="" class="login-logo" aria-hidden="true">
+          <span class="login-brand-copy">
+            <span class="login-brand-name">Gingies Home Solutions</span>
+            <span class="login-brand-tagline">Customer Portal</span>
+          </span>
+        </a>
+
+        <div class="login-intro">
+          <p class="login-eyebrow">Create your account</p>
+          <h1 id="signup-hero-title">Open your account and keep every request, message, and update within reach.</h1>
+          <p class="login-lead">
+            Sign up in a minute, jump straight into your dashboard, and keep your project activity in one place.
+          </p>
+        </div>
+
+        <div class="login-showcase-content">
+          <div class="login-stats row g-3" aria-label="Portal highlights">
+            <article class="login-stat col-sm-6">
+              <strong>1 min</strong>
+              <span>Fast account setup</span>
+            </article>
+            <article class="login-stat col-sm-6">
+              <strong>24/7</strong>
+              <span>Access to your dashboard</span>
+            </article>
+          </div>
+
+          <div class="login-highlights">
+            <article class="login-highlight">
+              <p class="login-highlight-title">Track requests clearly</p>
+              <p>Keep service requests, updates, and contact details connected to one account.</p>
+            </article>
+            <article class="login-highlight">
+              <p class="login-highlight-title">Pick up where you left off</p>
+              <p>Come back anytime and continue from the same dashboard without starting over.</p>
+            </article>
+          </div>
+        </div>
+      </aside>
+
+      <section class="login-panel col-lg-5 d-flex align-items-center order-1 order-lg-2" aria-labelledby="signup-heading">
+        <div class="login-card card border-0 shadow-lg w-100">
+          <img src="{{ url_for('static', filename='images/gingies-logo.png') }}" alt="Gingies Home Solutions" class="login-card-logo d-lg-none mx-auto mb-3">
+          <a class="login-back-link" href="{{ url_for('index') }}">Back to website</a>
+          <p class="login-kicker">New here?</p>
+          <h2 id="signup-heading">Create your account</h2>
+          <p class="login-copy">Choose a username, add your email, and set a password to get started.</p>
+
+          <form id="signupForm" class="login-form d-grid gap-3" novalidate>
+            <label class="form-label mb-0" for="signupUsername">Username</label>
+            <input
+              class="form-control form-control-lg"
+              id="signupUsername"
+              name="username"
+              type="text"
+              placeholder="Choose a username"
+              autocomplete="username"
+              required
+            >
+
+            <label class="form-label mb-0" for="signupEmail">Email address</label>
+            <input
+              class="form-control form-control-lg"
+              id="signupEmail"
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              autocomplete="email"
+              required
+            >
+
+            <label class="form-label mb-0" for="signupPassword">Password</label>
+            <input
+              class="form-control form-control-lg"
+              id="signupPassword"
+              name="password"
+              type="password"
+              placeholder="At least 8 characters"
+              autocomplete="new-password"
+              required
+            >
+
+            <button type="submit" class="submit-button login-submit btn btn-primary btn-lg">Create account</button>
+            <p id="signupMessage" class="form-message alert d-none mb-0" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="login-divider" aria-hidden="true">
+            <span>or</span>
+          </div>
+
+          <a class="login-secondary btn btn-outline-success w-100" href="{{ url_for('login') }}">Sign in instead</a>
+          <p class="login-support">
+            Questions? <a href="mailto:hello@gingieshomesolutions.com">hello@gingieshomesolutions.com</a>
+          </p>
+        </div>
+      </section>
+    </section>
+  </main>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="{{ url_for('static', filename='js/supabase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
